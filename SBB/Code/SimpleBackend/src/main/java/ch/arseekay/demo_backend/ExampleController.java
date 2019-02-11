@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 public class ExampleController {
     @GetMapping(value = "/test")
     public String getTestValue() {
-        return "Test";
+        return "{\"response\": \"Test\"}";
     }
 
     @ApiOperation(value = "Gibt Eingabe als Antwort zurück")
     @PostMapping(value = "/echo")
     public String getEcho(@RequestParam(value = "call") String call) {
-        return call;
+        return "{\"response\":" + call + "}";
     }
 }
